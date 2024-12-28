@@ -11,8 +11,7 @@ def test_calculate():
     calc = Calculator1()   
 
     response = calc.calculate(mock_request) # request é pego do json
-    print()
-    print(response)
+
     # Formato da resposta - Caso os nomes mudem, o teste falha
     assert "data" in response
     assert "Calculator" in response["data"]
@@ -29,4 +28,4 @@ def test_calculate_with_body_error():
     with raises(Exception) as excinfo:
         calc.calculate(mock_request)
 
-    assert str(excinfo.value) == "body mal formata"
+    assert str(excinfo.value) == "body mal formatado!"

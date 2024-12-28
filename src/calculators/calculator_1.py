@@ -1,5 +1,5 @@
 from typing import Dict
-from flask import Flask, request, jsonify 
+from flask import request as FlaskRequest
 
 class Calculator1:
     '''
@@ -9,7 +9,7 @@ class Calculator1:
     A terceira parte se mantem no mesmo valor
     Por fim é somado esses 3 valores e entregado o resultado. -> 
     '''
-    def calculate(self, request) -> Dict:
+    def calculate(self, request: FlaskRequest) -> Dict: # type: ignore
         body = request.json # pega a informação que o usuário manda na requisição
         input_data = self.__validate_body(body)
         splited_number = input_data / 3
