@@ -2,6 +2,7 @@
     "files.exclude": {
         "**/__pycache__": true,
         "**/.git": true,
-        "**/.pytest_cache": true
+        "**/.pytest_cache": true,
+        "**/.gitignore": true
     }
 }
