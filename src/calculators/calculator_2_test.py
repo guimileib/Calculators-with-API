@@ -9,14 +9,14 @@ class MockRequest:
 
 # Mock do driver para testar a integração 
 class MockDriverHandler(DriverHandlerInterface):
-    def standqard_derivation(self, numbers: List[float]) -> float:
+    def standard_derivation(self, numbers: List[float]) -> float:
         return 3.14
         
 
 # Teste de integração entre o Calculator2 e o NumpyHandler
 def test_calculate_integration():
     mock_request = MockRequest(body={"numbers": [1.2, 2.44, 3.11, 4.56, 5.99]})
-    
+
     driver = NumpyHandler()
     calc_2 = Calculator2(driver)
     formated_response = calc_2.calculate(mock_request)
@@ -33,4 +33,4 @@ def test_calculate():
     formated_response = calc_2.calculate(mock_request)
 
     assert isinstance(formated_response, dict)  
-    assert formated_response == {'data': {'Calculator': 2, 'result': 0.07}}
+    assert formated_response == {'data': {'Calculator': 2, 'result': 0.32}}

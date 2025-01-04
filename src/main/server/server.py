@@ -1,6 +1,6 @@
 # Aqui fica todas as definições do nosso servidor
 from flask import Flask
-from main.routes.calculators import calc_route_bp
+from src.main.routes.calculators import calc_route_bp
 
 app = Flask(__name__)
 
