@@ -1,7 +1,8 @@
 import numpy 
 from typing import List
+from interfaces.driver_handler_interface import DriverHandlerInterface
 
-class NumpyHandler: # Classe para manipulação de dados com a biblioteca numpy
+class NumpyHandler(DriverHandlerInterface): # Classe para manipular o numpy e calcular o desvio padrão 
     def __init__(self) -> None: # Inicializa a classe
         self.__np = numpy # Importa a biblioteca numpy
 
