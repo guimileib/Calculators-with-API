@@ -16,6 +16,7 @@ class MockDriverHandler(DriverHandlerInterface):
 # Teste de integração entre o Calculator2 e o NumpyHandler
 def test_calculate_integration():
     mock_request = MockRequest(body={"numbers": [1.2, 2.44, 3.11, 4.56, 5.99]})
+    
     driver = NumpyHandler()
     calc_2 = Calculator2(driver)
     formated_response = calc_2.calculate(mock_request)
