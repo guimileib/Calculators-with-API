@@ -9,3 +9,7 @@ class NumpyHandler(DriverHandlerInterface): # Classe para manipular o numpy e ca
     def standard_derivation(self, numbers: List[float]) -> float: # Função para calcular o desvio padrão
         std_dev = self.__np.std(numbers) # Desvio padrão
         return float(std_dev)
+    
+    def variance(self, numbers: List[float]) -> float:
+        return self.__np.var(numbers) # Variância
+        

@@ -9,4 +9,4 @@ class DriverHandlerInterface(ABC):
 
     @abstractmethod
     def variance(self, numbers: List[float]) -> float:
-        return self.__np.var(numbers) # Variância
+        pass # Interface em si não está fazendo nada 
