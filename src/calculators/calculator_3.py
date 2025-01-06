@@ -15,14 +15,14 @@ class Calculator3:
         self.__driver_handler = driver_handler
     
     def calculate(self, request: FlaskRequest) -> Dict: # type: ignore
-       body = request.get_json() # Pega o json do request
+       body = request.json # Pega o json do request
        input_data = self.__validate_body(body)
 
        variance = self.__calculate_variance(input_data)
        multiplcation = self.__calculate_multiplication(input_data)
        self.__verify_results(variance, multiplcation)
 
-       formatted_response = self.__format_response(multiplcation)
+       formatted_response = self.__format_response(variance)
        return formatted_response
     
     def __validate_body(self, body: Dict) -> List[float]:
