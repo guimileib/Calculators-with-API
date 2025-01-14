@@ -39,3 +39,20 @@ def calculator_3():
     except Exception as exception:
         error_response = handle_errors(exception)
         return jsonify(error_response['body']), error_response["status_code"]
+    
+@calc_route_bp.route("/calculator/4", methods=["POST"])
+def calculator_4():
+    try:
+        dados = request.json
+        numbers = dados.get('numbers')
+
+        # Verifica se a lista está presente e se contém apenas números válidos
+        if not numbers or not all(isinstance(num, (int, float)) for num in numbers):
+            return jsonify({'message': 'Invalid numbers'}), 400
+        
+        media = sum(numbers ) / len(numbers) # media
+
+        return jsonify({'media': media})
+    
+    except Exception as e:
+        return jsonify({"erro": str(e)}), 500  

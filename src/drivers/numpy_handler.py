@@ -12,4 +12,7 @@ class NumpyHandler(DriverHandlerInterface): # Classe para manipular o numpy e ca
     
     def variance(self, numbers: List[float]) -> float:
         return self.__np.var(numbers) # Variância
+    
+    def average(self, numbers: List[float]) -> float:
+        return self.__np.average(numbers) # Média
         
