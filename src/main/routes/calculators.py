@@ -2,6 +2,7 @@ from flask import Blueprint, jsonify, request
 from src.main.factories.calculator1_factory import calculator1_factory
 from src.main.factories.calculator2_factory import calculator2_factory
 from src.main.factories.calculator3_factory import calculator3_factory
+from src.main.factories.calculator4_factory import calculator4_factory
 
 from src.errors.error_controller import handle_errors
 
@@ -43,16 +44,8 @@ def calculator_3():
 @calc_route_bp.route("/calculator/4", methods=["POST"])
 def calculator_4():
     try:
-        dados = request.json
-        numbers = dados.get('numbers')
-
-        # Verifica se a lista está presente e se contém apenas números válidos
-        if not numbers or not all(isinstance(num, (int, float)) for num in numbers):
-            return jsonify({'message': 'Invalid numbers'}), 400
-        
-        media = sum(numbers ) / len(numbers) # media
-
-        return jsonify({'media': media})
-    
-    except Exception as e:
-        return jsonify({"erro": str(e)}), 500  
+        calc = calculator4_factory()
+        result = calc.calculate(request)
+        return jsonify(result), 200
+    except Exception as error:
+        return jsonify({"error": str(error)}), 400
