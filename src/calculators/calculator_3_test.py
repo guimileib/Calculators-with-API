@@ -1,13 +1,13 @@
-from typing import Dict,List
+from typing import Dict, List
 from pytest import raises
 from .calculator_3 import Calculator3
 
 
-class MockRequest:
+class MockRequest: # Mock para simular a requisição
     def __init__(self, body: Dict) -> None:
         self.json = body
-
-class MockDriverHandlerError:
+ 
+class MockDriverHandlerError: # Mock para simular o DriverHandler
     def variance(self, numbers: List[float]) -> float:
         return 3
     

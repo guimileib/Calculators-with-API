@@ -34,7 +34,7 @@ class Calculator4:
         return input_data
 
     def __calculate_mean(self, numbers: List[float]) -> float:
-        return sum(numbers) / len(numbers) if numbers else 0
+        return self.__driver_handler.average(numbers)
 
     def __verify_results(self, mean: float) -> None:
         if mean < 0:

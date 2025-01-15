@@ -46,6 +46,6 @@ def calculator_4():
     try:
         calc = calculator4_factory()
         result = calc.calculate(request)
-        return jsonify(result), 200
+        return jsonify(result)
     except Exception as error:
         return jsonify({"error": str(error)}), 400
